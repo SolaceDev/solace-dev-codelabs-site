@@ -1,0 +1,6 @@
+[submodule "solace-dev-codelabs"]
+	path = solace-dev-codelabs
+	url = https://github.com/SolaceDev/solace-dev-codelabs
+[submodule "site/solace-dev-codelabs"]
+	path = site/solace-dev-codelabs
+	url = https://github.com/SolaceDev/solace-dev-codelabs
