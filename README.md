@@ -1,8 +1,10 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b90d4895-1340-4831-a0cb-21ac6f8c36b6/deploy-status)](https://app.netlify.com/sites/musing-darwin-82a461/deploys)
 
-NOTE: Original README for Google CodeLabs platform is at https://github.com/googlecodelabs/tools/blob/master/README.md
+NOTE: This is the solace.dev/codelabs landing page itself; codelabs are kept separately. To contribute CodeLabs to solace.dev/codelabs go to [this repo](https://github.com/SolaceDev/solace-dev-codelabs): 
 
 # Solace CodeLabs landing page
+NOTE: Original README for Google CodeLabs platform is at https://github.com/googlecodelabs/tools/blob/master/README.md
+
 ## How this is setup
 1. Forked Google Codelabs [tools repo](https://github.com/googlecodelabs/tools/)
 2. In `site` folder of repo run `git submodule add https://github.com/SolaceDev/solace-dev-codelabs`
@@ -14,8 +16,9 @@ NOTE: Original README for Google CodeLabs platform is at https://github.com/goog
 
 ## Site setup
 - Codelabs Landing Page will live at: solace.dev/codelabs  
-- Individual Codelabs will be available at: solace.dev/codelabs/<codelab-id> 
+- Individual Codelabs will be available at: `solace.dev/codelabs/<codelab-id>`
 - Redirect will be available from solace.com/developers -> `solace.dev`
 - Redirect dev.solace.com to `solace.dev`
 
 ## Instructions for creating/editing Codelabs
+- To contribute CodeLabs to solace.dev/codelabs follow the instructions in [this repo.](https://github.com/SolaceDev/solace-dev-codelabs) 
