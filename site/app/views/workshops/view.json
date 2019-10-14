@@ -1,0 +1,10 @@
+{
+  "title": "Developer Workshops",
+  "description": "Solace delivers Developer Workshops at conferences, user groups, and in person with customers. The codelabs located on this page are the hands-on tutorials used during some of those workshops. If you're not part of an in person workshop feel free to walk through them on your own or head over to the https://solace.community to discuss with others or even see when the next workshops will be occuring!",
+  "logoUrl": "/workshops/icon.svg",
+  "tags": ["workshop"],
+  "exclude": [
+    ".*-about$",
+    "^lang-.*"
+  ]
+}
