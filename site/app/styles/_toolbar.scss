@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   height: $keyline * 8;
-  background-color: #474747;
+  background-color: #20262b;
   color: #fff;
   padding: $keyline * 2;
 
@@ -47,7 +47,7 @@
 }
 
 #searchbar {
-  border-radius: $radius;
+  border-radius: 25px;
 
   paper-input-container {
     padding: 0;
