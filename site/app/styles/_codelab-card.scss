@@ -96,13 +96,14 @@ $card-col-height: 200px; // column mode
     @include md-font-button();
     color: #fff;
     text-transform: none;
-    padding: 13px 25px;
+    padding: 10px 25px;
+    border-radius: 25px !important;
   }
 
   .category-icon {
-    width: 42px;
+    width: 80px;
     height: 42px;
-    background-size: 32px;
+    background-size: 80px;
     background-repeat: no-repeat;
     background-position: 0 50%;
   }
