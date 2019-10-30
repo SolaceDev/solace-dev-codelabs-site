@@ -1,6 +1,0 @@
-[[redirects]]
-  from = "/codelabs/"
-  to = "/codelabs/codelabs/"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
