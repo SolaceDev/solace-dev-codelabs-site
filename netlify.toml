@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/styles/*"
-  to = "/codelabs/styles/:splat"
+  to = "https://focused-beaver-3cc79d.netlify.com/codelabs/styles/:splat"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
