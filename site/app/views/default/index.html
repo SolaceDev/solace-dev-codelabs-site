@@ -116,16 +116,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <header id="banner" {% if view.id != 'default' -%}down{%- else %}down$="[[_toBoolean(selectedFilter)]]"{%- endif %}>
       <div class="site-width">
         {% if view.id == 'default' %}
-        <h2 class="banner-title">Welcome to Codelabs!</h2>
+        <h2 class="banner-title">Welcome to Solace Developer Codelabs!</h2>
         <div class="banner-description"
              data-filter-selected$="{% raw %}[[_toBoolean(selectedFilter)]]{% endraw %}">
           <p class="banner-info">
-            Codelabs provide a guided, tutorial, hands-on
-            coding experience. Most codelabs will step you through the process
-            of building a small application, or adding a new feature to an
-            existing application.
+            This site provides tutorials that give a guided, hands-on experience with the <a href="https://solace.com/products/platform/">Solace PubSub+ Platform</a>. Each codelab will either step you through the process of building application(s) with PubSub+, teach you how to use a specific feature, or even integrate PubSub+ with other technologies. Discuss your Codelab experience in the <a href="https://solace.community">Developer Community</a>
             <br>
-            <a href="https://github.com/googlecodelabs/tools">Codelab tools on GitHub</a>
+            <br>
+            Not Finding the Tutorials you want? 
+            <a href="https://docs.solace.com/Developer-Tutorials/Developer-Tutorials.htm">More Solace Tutorials Here!</a>
+            <br>
+            Want to learn more? <a href="https://solace.dev">Transport me to the Developer Portal</a>
           </p>
         {%- else -%}
           <div class="banner-description">
