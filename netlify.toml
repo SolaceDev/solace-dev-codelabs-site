@@ -1,0 +1,34 @@
+[[redirects]]
+  from = "/styles/*"
+  to = "/codelabs/styles/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/elements/*"
+  to = "/codelabs/elements/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/images/*"
+  to = "/codelabs/images/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/scripts/*"
+  to = "/codelabs/scripts/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/site.webmanifest"
+  to = "/codelabs/site.webmanifest"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
