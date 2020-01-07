@@ -11,7 +11,7 @@ NOTE: Original README for Google CodeLabs platform is at https://github.com/goog
 3. Run `git add . ; git commit ; git push`
 4. On Netlify we setup the following build settings:
   * Base directory: `site`
-  * Build command: `gulp dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r codelabs/codelabs dist/`
+  * Build command: `gulp dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist/codelabs/`
   * Publish directory: `site/dist`
 
 ## Site setup
