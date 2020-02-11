@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e66602c6-9a94-4095-a7c4-4e37ff2cdd41/deploy-status)](https://app.netlify.com/sites/focused-beaver-3cc79d/deploys)
 
-NOTE: This is the codelabs.solace.dev landing page itself; codelabs are kept separately. To contribute CodeLabs to codelabs.solace.dev go to [this repo](https://github.com/SolaceDev/solace-dev-codelabs): 
+NOTE: This is the codelabs.solace.dev landing page itself; codelabs are kept separately. To contribute CodeLabs to codelabs.solace.dev go to [this repo](https://github.com/SolaceDev/solace-dev-codelabs) 
 
 # Solace CodeLabs landing page
 NOTE: Original README for Google CodeLabs platform is at https://github.com/googlecodelabs/tools/blob/master/README.md
