@@ -1,6 +1,6 @@
 {
-  "title": "Codelabs",
-  "description": "Codelabs provide a guided, tutorial, hands-on coding experience. Most codelabs will step you through the process of building a small application, or adding a new feature to an existing application.",
+  "title": "Solace Codelabs",
+  "description": "This site provides tutorials that give a guided, hands-on experience with the Solace PubSub+ Platform.",
   "tags": [],
   "categories": [],
   "exclude": [
