@@ -8,8 +8,7 @@ Note: This is the codelabs.solace.dev landing page itself; individual codelabs a
 1. Clone the repo and initialize all submodules recursively `git clone --recursive https://github.com/SolaceDev/solace-dev-codelabs-site.git`
 1. Navigate to the `/site` directory
 1. Install node dependencies `npm install`
-1. Install gulp globally `npm install gulp-cli -g`
-1. Serve up a local server `gulp serve:dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist`
+1. Serve up a local server `npm run serve`
 1. Navigate to [http://localhost:8000](http://localhost:8000) and see the codelabs running locally
 
 Note: To avoid caching issues, either disable caching from the browser developer tools or open in incognito
