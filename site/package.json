@@ -1,4 +1,10 @@
 {
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "gulp serve:dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist"
+  },
   "private": true,
   "devDependencies": {
     "autoprefixer": "^9.3.1",
