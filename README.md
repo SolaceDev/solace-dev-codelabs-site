@@ -1,30 +1,27 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e66602c6-9a94-4095-a7c4-4e37ff2cdd41/deploy-status)](https://app.netlify.com/sites/focused-beaver-3cc79d/deploys)
 
-NOTE: This is the codelabs.solace.dev landing page itself; codelabs are kept separately. To contribute CodeLabs to codelabs.solace.dev go to [this repo](https://github.com/SolaceDev/solace-dev-codelabs) 
+# Solace Codelabs landing page
+[The Solace Codelabs](https://codelabs.solace.dev/) landing page that is based on the [Google Codelabs tool](https://github.com/googlecodelabs/tools)
+Note: This is the codelabs.solace.dev landing page itself; individual codelabs are kept separately here https://github.com/SolaceDev/solace-dev-codelabs
 
-# Solace CodeLabs landing page
-NOTE: Original README for Google CodeLabs platform is at https://github.com/googlecodelabs/tools/blob/master/README.md
+## Run locally
+1. Clone the repo and initialize all submodules recursively `git clone --recursive https://github.com/SolaceDev/solace-dev-codelabs-site.git`
+1. Navigate to the `/site` directory
+1. Install node dependencies `npm install`
+1. Install gulp globally `npm install gulp-cli -g`
+1. Serve up a local server `gulp serve:dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist`
+1. Navigate to [http://localhost:8000](http://localhost:8000) and see the codelabs running locally
 
-## How this is setup
-1. Forked Google Codelabs [tools repo](https://github.com/googlecodelabs/tools/)
-2. In `site` folder of repo run `git submodule add https://github.com/SolaceDev/solace-dev-codelabs`
-3. Run `git add . ; git commit ; git push`
-4. On Netlify we setup the following build settings:
-  * Base directory: `site`
-  * Build command: `gulp dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist/codelabs/`
-  * Publish directory: `site/dist`
+Note: To avoid caching issues, either disable caching from the browser developer tools or open in incognito
 
-### Getting setup
-1. Clone the repo (recursive initializes all submodules within, using their default settings)
-`git clone --recursive git@github.com:SolaceDev/solace-dev-codelabs-site.git`
-2. Create new branch `git checkout -b <new-branch>`
-3. Install NPM Dependancies `npm install`
-4. Install Gulp `npm install --global gulp-cli`
-5. Use this Gulp command to serve up a local dev server `gulp serve:dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist` - By running `gulp serve` task, all of the tasks specified as dependencies have been run first. Exactly what you want, head over to your browser of choice and open up [http://localhost:8000](http://localhost:8000) in *Incognito*, as it tends to cache otherwise. If all is well, you should hopefully see your CodeLabs site running locally now.
+## Netlify setup
+1. Set the base directory to `/site`
+1. Configure the build command as follows `gulp dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist/codelabs/`
+1. Set the publish directory to `site/dist`
 
-### Making your updates
+## Contributing
 
-Steps for adding a new Codelab category (color and SVG icon) card.
+Adding new category (color and SVG icon) card.
 
 1. Open `/site/app/styles/categories.scss`.
 
