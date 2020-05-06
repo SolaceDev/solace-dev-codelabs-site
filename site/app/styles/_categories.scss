@@ -52,6 +52,8 @@ $color-mqtt-purple: #751b84;
 $color-rest-grey: #a2a7ab;
 $color-solace-green: #00c895;
 $color-spring-green: #6db33f;
+$color-k8s-blue: #2f6ce6;
+$color-js-yellow: #f5de19;
 
 /* Mixins */
 @mixin codelab-card($categories, $color, $icon) {
@@ -196,3 +198,7 @@ $color-weave-green, 'weave.svg');
         $color-solace-green, 'solace.svg');
 @include codelab-card(['spring'],
         $color-spring-green, 'spring.svg');
+@include codelab-card(['kubernetes'],
+        $color-k8s-blue, 'k8s.svg');
+@include codelab-card(['javascript'],
+        $color-js-yellow, 'js.svg');
