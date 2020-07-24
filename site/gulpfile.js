@@ -84,6 +84,8 @@ const DRY_RUN = !!args.dry;
 // VIEWS_FILTER is the filter to use for view inclusion.
 const VIEWS_FILTER = args.viewsFilter || '*';
 
+var all_categories = [];
+
 // clean:build removes the build directory
 gulp.task('clean:build', (callback) => {
   return del('build')
@@ -421,6 +423,8 @@ const parseViewMetadata = (filepath) => {
 // parseCodelabMetadata parses the codelab metadata at the given path.
 const parseCodelabMetadata = (filepath) => {
   var meta = JSON.parse(fs.readFileSync(filepath));
+  // Getting all the categories in one var
+  all_categories = [].concat.apply(all_categories, meta.category);
 
   meta.category = meta.category || [];
   if (!Array.isArray(meta.category)) {
@@ -771,13 +775,21 @@ const filterCodelabs = (view, codelabs) => {
 
   // Compute distinct categories.
   var categories = {};
-  for (var i in codelabs) {
-    var cat = levelledCategory(codelabs[i], view.catLevel);
-    categories[cat.name] = true;
-  }
-
+  // for (var i in codelabs) {
+  //   var cat = levelledCategory(codelabs[i], view.catLevel);
+  //   categories[cat.name] = true;
+  // }
+  
   // sort the codelabs.
   sortCodelabs(codelabs, view);
+
+  // modify categories to include all codelab categories
+  var unique_cat = all_categories.filter((v, i, a) => a.indexOf(v) === i)
+  unique_cat.forEach(cat =>{
+    if (cat && cat != "solace" && cat != "codelab") {
+      categories[cat] = true;
+    }
+  })
 
   return {
     codelabs: codelabs,
