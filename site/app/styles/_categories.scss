@@ -55,6 +55,7 @@ $color-spring-green: #6db33f;
 $color-k8s-blue: #2f6ce6;
 $color-js-yellow: #f5de19;
 $color-helm-blue: #277a9f;
+$color-azure-blue: #038ad7;
 
 /* Mixins */
 @mixin codelab-card($categories, $color, $icon) {
@@ -205,3 +206,5 @@ $color-weave-green, 'weave.svg');
         $color-js-yellow, 'js.svg');
 @include codelab-card(['helm'],
         $color-helm-blue, 'helm.svg');
+@include codelab-card(['azure'],
+        $color-azure-blue, 'azure.svg');
