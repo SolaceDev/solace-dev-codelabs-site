@@ -118,18 +118,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         {% if view.id == 'default' %}
         <h2 class="banner-title">Welcome to Solace Developer Codelabs!</h2>
         <div class="banner-description"
-             data-filter-selected$="{% raw %}[[_toBoolean(selectedFilter)]]{% endraw %}">
-          <p class="banner-info">
-            This site provides tutorials that give a guided, hands-on experience with the <a href="https://solace.com/products/platform/">Solace PubSub+ Platform</a>. Each codelab will either step you through the process of building application(s) with PubSub+, teach you how to use a specific feature, or even integrate PubSub+ with other technologies. 
-            <br>
-            <br>
-            Discuss your Codelab experience in the <a href="https://solace.community/categories/pubsub%2B-tutorials">Developer Community</a>
-            <br>
-            Not Finding the Tutorials you want? 
-            <a href="https://docs.solace.com/Developer-Tutorials/Developer-Tutorials.htm">More Solace Tutorials Here!</a>
-            <br>
-            Want to learn more? <a href="https://solace.dev">Transport me to the Developer Portal</a>
-          </p>
+        data-filter-selected$="{% raw %}[[_toBoolean(selectedFilter)]]{% endraw %}">
+        <p class="banner-info">
+          This site provides tutorials that give a guided, hands-on experience with the <a href="https://solace.com/products/platform/">Solace PubSub+ Platform</a>. Each codelab will either step you through the process of building application(s) with PubSub+, teach you how to use a specific feature, or even integrate PubSub+ with other technologies. 
+          <br>
+          <br>
+          Discuss your Codelab experience in the <a href="https://solace.community/categories/pubsub%2B-tutorials">Developer Community</a>
+          <br>
+          Not Finding the Tutorials you want? 
+          <a href="https://docs.solace.com/Developer-Tutorials/Developer-Tutorials.htm">More Solace Tutorials Here!</a>
+          <br>
+          Want to learn more? <a href="https://solace.dev">Transport me to the Developer Portal</a>
+          <br>
+          <br>
+          Check out the <a href="https://solace.com/connectors/">PubSub+ Connector Hub</a> to learn more about connectors used throughout these Codelabs and to discover other ways to integrate Solace with other technologies! 
+        </p>
         {%- else -%}
           <div class="banner-description">
             <img id="logo" src="{{view.logoUrl}}" alt="Event logo">
