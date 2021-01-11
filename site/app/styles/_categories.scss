@@ -57,6 +57,7 @@ $color-js-yellow: #f5de19;
 $color-helm-blue: #277a9f;
 $color-azure-blue: #038ad7;
 $color-opentel-orange: #f7a71b;
+$color-mule-blue: #04a0de;
 
 /* Mixins */
 @mixin codelab-card($categories, $color, $icon) {
@@ -211,3 +212,5 @@ $color-weave-green, 'weave.svg');
         $color-azure-blue, 'azure.svg');
 @include codelab-card(['opentelemetry'],
         $color-opentel-orange, 'opentel.png');
+@include codelab-card(['mulesoft'],
+        $color-mule-blue, 'mule.svg');
