@@ -41,7 +41,7 @@ const swig = require('swig-templates');
 const url = require('url');
 
 // DEFAULT_GA is the default Google Analytics tracker ID
-const DEFAULT_GA = 'UA-3921398-10';
+const DEFAULT_GA = 'UA-123';
 
 // DEFAULT_VIEW_META_PATH is the default path to view metadata.
 const DEFAULT_VIEW_META_PATH = 'app/views/default/view.json';
