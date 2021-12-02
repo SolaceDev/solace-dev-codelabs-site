@@ -1,7 +1,6 @@
 .tmp
 .content
 gulp-cache
-package-lock.json
 node_modules/
 app/bower_components/*/.*
 !app/bower_components/*/.bower.json
