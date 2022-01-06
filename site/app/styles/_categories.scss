@@ -60,6 +60,7 @@ $color-opentel-orange: #f7a71b;
 $color-mule-blue: #04a0de;
 $color-rabbit-orange: #f76302;
 $color-keda-blue: #326de6;
+$color-apama-blue: #0098CF;
 
 /* Mixins */
 @mixin codelab-card($categories, $color, $icon) {
@@ -154,3 +155,4 @@ $color-keda-blue: #326de6;
 @include codelab-card([ "mulesoft" ], $color-mule-blue, "mule.svg");
 @include codelab-card([ "rabbitmq" ], $color-rabbit-orange, "rabbitmq.png");
 @include codelab-card([ "keda" ], $color-keda-blue, "keda.png");
+@include codelab-card([ "apama" ], $color-apama-blue, "apama.png");
