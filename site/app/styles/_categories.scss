@@ -61,7 +61,14 @@ $color-mule-blue: #04a0de;
 $color-rabbit-orange: #f76302;
 $color-keda-blue: #326de6;
 $color-apama-blue: #0098CF;
-$color-hermes-yellow: #FEF200;
+$color-hermesjms-yellow: #FEF200;
+$color-flink-pink: #E6516F;
+$color-nifi-blue: #6A8691;
+$color-nagios-black: black;
+$color-jboss-red: red;
+$color-weblogic-red: red;
+$color-websphere-purple: purple;
+$color-webspherelib-blue: #6A8691;
 
 
 /* Mixins */
@@ -158,4 +165,11 @@ $color-hermes-yellow: #FEF200;
 @include codelab-card([ "rabbitmq" ], $color-rabbit-orange, "rabbitmq.png");
 @include codelab-card([ "keda" ], $color-keda-blue, "keda.png");
 @include codelab-card([ "apama" ], $color-apama-blue, "apama.png");
-@include codelab-card([ "hermesjms" ], $color-hermesjms-blue, "hermesjms.png");
+@include codelab-card([ "hermesjms" ], $color-hermesjms-yellow, "hermesjms.png");
+@include codelab-card([ "flink" ], $color-flink-pink, "flink.png");
+@include codelab-card([ "nifi" ], $color-nifi-blue, "nifi.jpg");
+@include codelab-card([ "nagios" ], $color-nagios-black, "nagios.png");
+@include codelab-card([ "jboss" ], $color-jboss-red, "jboss.png");
+@include codelab-card([ "weblogic" ], $color-weblogic-red, "weblogic.png");
+@include codelab-card([ "websphere" ], $color-websphere-purple, "websphere.png");
+@include codelab-card([ "webspherelib" ], $color-webspherelib-blue, "webspherelib.png");
