@@ -119,7 +119,6 @@ testSuite({
     mockControl.$replayAll();
 
     document.body.appendChild(analytics);
-    analytics.setAttribute("codelab-gaid", "UA-456");
     mockControl.$verifyAll();
   },
 
