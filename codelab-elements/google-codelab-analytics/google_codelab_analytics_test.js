@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-goog.module('googlecodelabs.CodelabAnalyticsTest');
+goog.module("googlecodelabs.CodelabAnalyticsTest");
 goog.setTestOnly();
 
-const CodelabAnalytics = goog.require('googlecodelabs.CodelabAnalytics');
+const CodelabAnalytics = goog.require("googlecodelabs.CodelabAnalytics");
 window.customElements.define(CodelabAnalytics.getTagName(), CodelabAnalytics);
-const MockControl = goog.require('goog.testing.MockControl');
-const dom = goog.require('goog.dom');
-const testSuite = goog.require('goog.testing.testSuite');
-goog.require('goog.testing.asserts');
-goog.require('goog.testing.jsunit');
+const MockControl = goog.require("goog.testing.MockControl");
+const dom = goog.require("goog.dom");
+const testSuite = goog.require("goog.testing.testSuite");
+goog.require("goog.testing.asserts");
+goog.require("goog.testing.jsunit");
 
 let mockControl;
 /**
@@ -34,13 +34,12 @@ let mockControl;
 CodelabAnalytics.injectGAscript = () => {};
 
 testSuite({
-
   setUp() {
     mockControl = new MockControl();
   },
 
   tearDown() {
-    dom.removeNode(document.body.querySelector('google-codelab-analytics'));
+    dom.removeNode(document.body.querySelector("google-codelab-analytics"));
 
     mockControl.$resetAll();
     mockControl.$tearDown();
@@ -50,20 +49,18 @@ testSuite({
     const analytics = new CodelabAnalytics();
 
     // Need to mock as we don't have window.ga.getAll()
-    const mockGetAll = mockControl.createFunctionMock('getAll');
-    const mockCreate = mockControl.createFunctionMock('create');
+    const mockGetAll = mockControl.createFunctionMock("getAll");
+    const mockCreate = mockControl.createFunctionMock("create");
     mockGetAll().$returns([]).$anyTimes();
     mockCreate().$once();
 
-    analytics.setAttribute('gaid', 'UA-123');
-
-    window['ga'] = (...args) => {
-      if (['create', 'getAll'].indexOf(args[0]) !== -1) {
-        window['ga'][args[0]]();
+    window["ga"] = (...args) => {
+      if (["create", "getAll"].indexOf(args[0]) !== -1) {
+        window["ga"][args[0]]();
       }
     };
-    window['ga']['getAll'] = mockGetAll;
-    window['ga']['create'] = mockCreate;
+    window["ga"]["getAll"] = mockGetAll;
+    window["ga"]["create"] = mockCreate;
 
     mockControl.$replayAll();
     document.body.appendChild(analytics);
@@ -71,28 +68,29 @@ testSuite({
   },
 
   testViewParam_InitsViewTracker() {
-    const analytics = new CodelabAnalytics();
-    analytics.setAttribute('gaid', 'UA-123');
-
     const loc = window.location;
-    var newurl = loc.protocol + '//' + loc.host + loc.pathname +
-        '?viewga=testView&param2=hi';
-    window.history.pushState({ path: newurl }, '', newurl);
+    var newurl =
+      loc.protocol +
+      "//" +
+      loc.host +
+      loc.pathname +
+      "?viewga=testView&param2=hi";
+    window.history.pushState({ path: newurl }, "", newurl);
 
     // Need to mock as we don't have window.ga.getAll()
-    const mockGetAll = mockControl.createFunctionMock('getAll');
-    const mockCreate = mockControl.createFunctionMock('create');
+    const mockGetAll = mockControl.createFunctionMock("getAll");
+    const mockCreate = mockControl.createFunctionMock("create");
     mockGetAll().$returns([]).$anyTimes();
     // Creates 2 trackers (because of view param).
     mockCreate().$times(2);
 
-    window['ga'] = (...args) => {
-      if (['create', 'getAll'].indexOf(args[0]) !== -1) {
-        window['ga'][args[0]]();
+    window["ga"] = (...args) => {
+      if (["create", "getAll"].indexOf(args[0]) !== -1) {
+        window["ga"][args[0]]();
       }
     };
-    window['ga']['getAll'] = mockGetAll;
-    window['ga']['create'] = mockCreate;
+    window["ga"]["getAll"] = mockGetAll;
+    window["ga"]["create"] = mockCreate;
 
     mockControl.$replayAll();
 
@@ -103,51 +101,46 @@ testSuite({
   },
 
   testCodelabGAIDAttr_InitsCodelabTracker() {
-    const analytics = new CodelabAnalytics();
-    analytics.setAttribute('gaid', 'UA-123');
     // Need to mock as we don't have window.ga.getAll()
-    const mockGetAll = mockControl.createFunctionMock('getAll');
-    const mockCreate = mockControl.createFunctionMock('create');
+    const mockGetAll = mockControl.createFunctionMock("getAll");
+    const mockCreate = mockControl.createFunctionMock("create");
     mockGetAll().$returns([]).$anyTimes();
     // Creates 2 trackers (because of codelab gaid attribute).
     mockCreate().$times(2);
 
-    window['ga'] = (...args) => {
-      if (['create', 'getAll'].indexOf(args[0]) !== -1) {
-        window['ga'][args[0]]();
+    window["ga"] = (...args) => {
+      if (["create", "getAll"].indexOf(args[0]) !== -1) {
+        window["ga"][args[0]]();
       }
     };
-    window['ga']['getAll'] = mockGetAll;
-    window['ga']['create'] = mockCreate;
+    window["ga"]["getAll"] = mockGetAll;
+    window["ga"]["create"] = mockCreate;
 
     mockControl.$replayAll();
 
     document.body.appendChild(analytics);
-    analytics.setAttribute('codelab-gaid', 'UA-456');
     mockControl.$verifyAll();
   },
 
   async testSetAnalyticsReadyAttrs() {
-    const analytics = new CodelabAnalytics();
-    analytics.setAttribute('gaid', 'UA-123');
     // Need to mock as we don't have window.ga.getAll()
-    const mockGetAll = mockControl.createFunctionMock('getAll');
-    const mockCreate = mockControl.createFunctionMock('create');
+    const mockGetAll = mockControl.createFunctionMock("getAll");
+    const mockCreate = mockControl.createFunctionMock("create");
     mockGetAll().$returns([]).$anyTimes();
     // Creates 2 trackers (because of codelab gaid attribute).
     mockCreate().$times(2);
 
-    window['ga'] = (...args) => {
-      if (['create', 'getAll'].indexOf(args[0]) !== -1) {
-        window['ga'][args[0]]();
+    window["ga"] = (...args) => {
+      if (["create", "getAll"].indexOf(args[0]) !== -1) {
+        window["ga"][args[0]]();
       }
     };
-    window['ga']['getAll'] = mockGetAll;
-    window['ga']['create'] = mockCreate;
+    window["ga"]["getAll"] = mockGetAll;
+    window["ga"]["create"] = mockCreate;
 
     mockControl.$replayAll();
 
-    const codelabElement = document.createElement('google-codelab');
+    const codelabElement = document.createElement("google-codelab");
     document.body.appendChild(codelabElement);
     document.body.appendChild(analytics);
 
@@ -156,20 +149,13 @@ testSuite({
     // https://github.com/bazelbuild/rules_closure/issues/316. Once that's
     // resolved we can use it in place of the timeout.
     setTimeout(() => {
-      assertEquals('', codelabElement.getAttribute('analytics-ready'));
+      assertEquals("", codelabElement.getAttribute("analytics-ready"));
     }, 5000);
-
   },
 
-  testPageviewEventDispatch_SendsPageViewTracking() {
+  testPageviewEventDispatch_SendsPageViewTracking() {},
 
-  },
+  testEventDispatch_SendsEventTracking() {},
 
-  testEventDispatch_SendsEventTracking() {
-
-  },
-
-  testCodelabAttributes_UpdatesTrackingParams() {
-
-  }
+  testCodelabAttributes_UpdatesTrackingParams() {},
 });
