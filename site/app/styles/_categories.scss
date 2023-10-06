@@ -70,6 +70,7 @@ $color-weblogic-red: red;
 $color-websphere-purple: purple;
 $color-webspherelib-blue: #6A8691;
 $color-spark-orange: #E77215;
+$color-sap-blue: #00418D
 
 
 /* Mixins */
@@ -175,3 +176,4 @@ $color-spark-orange: #E77215;
 @include codelab-card([ "websphere" ], $color-websphere-purple, "websphere.png");
 @include codelab-card([ "webspherelib" ], $color-webspherelib-blue, "webspherelib.png");
 @include codelab-card([ "spark" ], $color-spark-orange, "spark.png");
+@include codelab-card([ "sap" ], $color-sap-blue, "sap.png");
