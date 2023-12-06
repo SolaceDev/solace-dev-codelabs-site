@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e66602c6-9a94-4095-a7c4-4e37ff2cdd41/deploy-status)](https://app.netlify.com/sites/focused-beaver-3cc79d/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e66602c6-9a94-4095-a7c4-4e37ff2cdd41/deploy-status)](https://app.netlify.com/sites/codelabs-solace/deploys)
 
 # Solace Codelabs landing page
 [The Solace Codelabs](https://codelabs.solace.dev/) landing page that is based on the [Google Codelabs tool](https://github.com/googlecodelabs/tools)
