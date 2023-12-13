@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "serve": "gulp serve:dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist",
-    "dist": "gulp dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist"
+    "dist": "gulp dist --codelabs-dir=./solace-dev-codelabs/codelabs && rm dist/codelabs && cp -r solace-dev-codelabs/codelabs dist",
+    "netlify": "node scripts/add_gtm_osano.js; npm run dist"
   },
   "private": true,
   "devDependencies": {
@@ -48,5 +49,9 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "replace-in-file": "^7.0.2"
   }
 }
