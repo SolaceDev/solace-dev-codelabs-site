@@ -3,7 +3,6 @@
   "description": "Solace Integration Guides are created and supported by the Solace Community. They are meant to provide a step-by-step tutorial for using the Solace PubSub+ Platform delivers with various technologies. Feel free to talk through them on your own or head over to the https://solace.community to discuss with others!",
   "logoUrl": "iguides/icon.svg",
   "tags": ["iguide"],
-  "hidden": true,
   "exclude": [
     ".*-about$",
     "^lang-.*"
