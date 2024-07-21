@@ -71,6 +71,7 @@ $color-websphere-purple: purple;
 $color-webspherelib-blue: #6A8691;
 $color-spark-orange: #E77215;
 $color-sap-blue: #00418D;
+$color-terraform-purple: #6043E9;
 
 
 /* Mixins */
@@ -177,3 +178,4 @@ $color-sap-blue: #00418D;
 @include codelab-card([ "webspherelib" ], $color-webspherelib-blue, "webspherelib.png");
 @include codelab-card([ "spark" ], $color-spark-orange, "spark.png");
 @include codelab-card([ "sap" ], $color-sap-blue, "sap.png");
+@include codelab-card([ "terraform" ], $color-terraform-purple, "terraform.png");
