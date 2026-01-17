@@ -29,7 +29,7 @@
     "gulp-ignore": "^2.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^6.0.1",
     "gulp-uglify": "^3.0.1",
     "gulp-useref": "^3.1.6",
     "gulp-vulcanize": "^7.0.0",
