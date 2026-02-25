@@ -77,24 +77,15 @@ $color-apigee-orange: #dd3302;
 
 /* Mixins */
 @mixin codelab-card($categories, $color, $icon) {
-  %bg-#{$color} {
-    background-color: $color;
-  }
-  %border-#{$color} {
-    border-bottom-color: $color;
-  }
-  %icon-#{$icon} {
-    background-image: url("../images/icons/#{$icon}");
-  }
   @each $category in $categories {
     .codelab-card.category-#{$category} {
-      @extend %border-#{$color};
+      border-bottom-color: $color;
     }
     .#{$category}-bg {
-      @extend %bg-#{$color};
+      background-color: $color;
     }
     .#{$category}-icon {
-      @extend %icon-#{$icon};
+      background-image: url("../images/icons/#{$icon}");
     }
   }
 }
