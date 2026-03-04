@@ -1,4 +1,12 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e66602c6-9a94-4095-a7c4-4e37ff2cdd41/deploy-status)](https://app.netlify.com/sites/codelabs-solace/deploys)
+
+<div align="center">
+	<img src="https://devrelassets.z9.web.core.windows.net/solace-developers-logo.svg" alt="Solace Developers Logo" width="300" />
+	<br/>
+	<a href="https://app.netlify.com/sites/codelabs-solace/deploys">
+		<img src="https://api.netlify.com/api/v1/badges/e66602c6-9a94-4095-a7c4-4e37ff2cdd41/deploy-status" alt="Netlify Status" />
+	</a>
+</div>
+
 
 # Solace Codelabs landing page
 [The Solace Codelabs](https://codelabs.solace.dev/) landing page that is based on the [Google Codelabs tool](https://github.com/googlecodelabs/tools)

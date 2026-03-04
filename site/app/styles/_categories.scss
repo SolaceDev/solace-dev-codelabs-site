@@ -77,24 +77,15 @@ $color-apigee-orange: #dd3302;
 
 /* Mixins */
 @mixin codelab-card($categories, $color, $icon) {
-  %bg-#{$color} {
-    background-color: $color;
-  }
-  %border-#{$color} {
-    border-bottom-color: $color;
-  }
-  %icon-#{$icon} {
-    background-image: url("../images/icons/#{$icon}");
-  }
   @each $category in $categories {
     .codelab-card.category-#{$category} {
-      @extend %border-#{$color};
+      border-bottom-color: $color;
     }
     .#{$category}-bg {
-      @extend %bg-#{$color};
+      background-color: $color;
     }
     .#{$category}-icon {
-      @extend %icon-#{$icon};
+      background-image: url("../images/icons/#{$icon}");
     }
   }
 }
@@ -158,7 +149,7 @@ $color-apigee-orange: #dd3302;
 @include codelab-card([ "kafka" ], $color-kafka-black, "kafka.svg");
 @include codelab-card([ "mqtt" ], $color-mqtt-purple, "mqtt.svg");
 @include codelab-card([ "rest" ], $color-rest-grey, "rest.svg");
-@include codelab-card([ "solace" ], $color-solace-green, "solace.svg");
+@include codelab-card([ "solace" ], $color-solace-green, "solace-2025.png");
 @include codelab-card([ "spring" ], $color-spring-green, "spring.svg");
 @include codelab-card([ "kubernetes" ], $color-k8s-blue, "k8s.svg");
 @include codelab-card([ "javascript" ], $color-js-yellow, "js.svg");
