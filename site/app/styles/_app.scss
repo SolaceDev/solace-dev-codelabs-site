@@ -173,6 +173,56 @@ ul, li {
 .dropdown-filter {
   background-color: #fff;
   border-radius: $radius;
+
+  .category-select {
+    @include md-font-base();
+    padding: 20px 48px 20px 20px;
+    border: 1px solid #ddd;
+    border-radius: $radius;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23999' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px;
+    color: #757575;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    min-width: 280px;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+      border-color: #ccc;
+      background-color: #fafafa;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $blueGrey500;
+      box-shadow: 0 0 0 3px rgba(69, 90, 100, 0.08);
+      background-color: #fff;
+    }
+
+    option {
+      padding: 12px;
+      font-size: 16px;
+      color: #333;
+      
+      &:disabled {
+        color: #757575;
+      }
+    }
+
+    // Style the placeholder differently
+    option[disabled] {
+      color: #757575;
+    }
+  }
 }
 
 .dropdown-content {

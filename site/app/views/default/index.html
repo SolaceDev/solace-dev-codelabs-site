@@ -194,26 +194,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         {% endif %}
 
         {%- if showcats -%}
-        <paper-dropdown-menu
-          label="Filter by category"
-          class="dropdown-filter"
-          no-label-float
-          noink no-animations
-        >
-          <paper-listbox
+        <div class="dropdown-filter">
+          <select
             id="categorylist"
-            slot="dropdown-content"
-            class="dropdown-content"
-            on-iron-activate="onCategoryActivate"
-            attr-for-selected="filter"
+            class="category-select"
           >
-              {% for category in categories -%}
-                {%- if categoryHasShowableCodelabs(category, codelabs) -%}
-                  <paper-item filter="{{category}}">{{category}}</paper-item>
-                {%- endif -%}
-              {%- endfor %}
-          </paper-listbox>
-        </paper-dropdown-menu>
+            <option value="" disabled selected>Filter by category</option>
+            <option value="">All Categories</option>
+            {% for category in categories -%}
+              {%- if categoryHasShowableCodelabs(category, codelabs) -%}
+                <option value="{{category}}">{{category}}</option>
+              {%- endif -%}
+            {%- endfor %}
+          </select>
+        </div>
         {%- endif -%}
       </div>
 

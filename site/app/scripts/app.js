@@ -54,20 +54,39 @@
     };
 
     app.onCategoryActivate = function(e, detail) {
-      var item = e.target.selectedItem;
-      if (item && item.getAttribute('filter') === detail.selected) {
-        detail.selected = null;
+      // Handle both old Polymer event (detail) and native select event
+      var selected = null;
+      
+      if (e.target && e.target.tagName === 'SELECT') {
+        // Native select element
+        selected = e.target.value || null;
+        
+        // Update the placeholder option text when "All Categories" is selected
+        if (!selected || selected === '') {
+          var placeholderOption = e.target.querySelector('option[disabled]');
+          if (placeholderOption) {
+            placeholderOption.removeAttribute('selected');
+          }
+        }
+      } else if (detail) {
+        // Polymer event
+        var item = e.target.selectedItem;
+        if (item && item.getAttribute('filter') === detail.selected) {
+          detail.selected = null;
+        }
+        if (!detail.selected) {
+          this.async(function() { e.target.selected = null; });
+        }
+        selected = detail.selected;
       }
-      if (!detail.selected) {
-        this.async(function() { e.target.selected = null; });
-      }
-      this.filterBy(e, {selected: detail.selected});
+
+      this.filterBy(e, {selected: selected});
 
       // Update URL deep link to filter.
       var params = new URLSearchParams(window.location.search.slice(1));
       params.delete('cat'); // delete all cat params
-      if (detail.selected) {
-        params.set('cat',  detail.selected);
+      if (selected) {
+        params.set('cat', selected);
       }
 
       // record in browser history to make the back button work
@@ -161,7 +180,23 @@
       }
 
       if (this.$.categorylist) {
-        this.$.categorylist.selected = cat;
+        // Handle both Polymer and native select
+        if (this.$.categorylist.tagName === 'SELECT') {
+          // Set the value, or reset to placeholder if no category
+          if (cat) {
+            this.$.categorylist.value = cat;
+            // Re-enable the placeholder option if needed
+            var placeholderOption = this.$.categorylist.querySelector('option[disabled]');
+            if (placeholderOption) {
+              placeholderOption.removeAttribute('selected');
+            }
+          } else {
+            // Reset to placeholder
+            this.$.categorylist.selectedIndex = 0;
+          }
+        } else {
+          this.$.categorylist.selected = cat;
+        }
       }
       if (this.$.sidelist) {
         this.$.sidelist.selected = cat;
@@ -257,6 +292,14 @@
   // Wait for web components to be ready and then load the app.
   document.addEventListener('WebComponentsReady', () => {
     const a = app();
+
+    // Add event listener for native select element
+    const categorySelect = document.getElementById('categorylist');
+    if (categorySelect && categorySelect.tagName === 'SELECT') {
+      categorySelect.addEventListener('change', (e) => {
+        a.onCategoryActivate.call(a, e, null);
+      });
+    }
 
     // TODO: handle forward/backward and filter cards
     window.addEventListener('popstate', () => {
